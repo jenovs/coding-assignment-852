@@ -25,7 +25,7 @@ import hStarImg from './hStar.png';
 import heartImg from './heart.svg';
 
 const durations = {
-  d: 'days',
+  d: 'Days',
 };
 
 const getLowestPrice = (data, curr) => {
@@ -87,7 +87,8 @@ const TourCard = ({ data }) => {
       </Image>
       <InfoWrapper>
         <H1>
-          {name} - {length} {durations[length_type]}
+          {name}
+          {!name.match(/ Days$/) && ` - ${length} ${durations[length_type]}`}
         </H1>
         <Descr>"{description.substring(0, 150)}..."</Descr>
         <Details>
