@@ -37,7 +37,7 @@ const getLowestPrice = (data, curr) => {
   }, Infinity);
 };
 
-const renderRating = count => {
+const renderStarRating = count => {
   const rem = Boolean(count % 1);
   const res = [];
 
@@ -81,7 +81,7 @@ const TourCard = ({ data }) => {
           <img src={heartImg} alt="heart" />
         </Heart>
         <Ratings>
-          <Stars>{renderRating(rating)}</Stars>
+          <Stars>{renderStarRating(rating)}</Stars>
           <Reviews>{reviews} reviews</Reviews>
         </Ratings>
       </Image>

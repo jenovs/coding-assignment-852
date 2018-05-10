@@ -107,10 +107,11 @@ export const H1 = styled.h1`
 `;
 
 export const Wrapper = styled.div`
+  background-color: #fff;
   box-shadow: 0 0 1px gray;
   display: flex;
   flex-direction: column;
   margin: auto;
-  max-width: 768px;
+  margin-bottom: 20px;
   width: 100%;
 `;
