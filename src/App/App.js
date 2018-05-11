@@ -7,6 +7,7 @@ import TourCard from '../TourCard';
 
 // import response from '../response.json';
 
+import fetchData from '../api/fetchData';
 import filterByDate from '../utils/filterByDate';
 import toursInNextMonths from '../utils/toursInNextMonths';
 import sortByPrice from '../utils/sortByPrice';
@@ -35,8 +36,7 @@ class App extends React.Component {
   }
 
   fetchData = () => {
-    fetch('https://api.myjson.com/bins/oivjj')
-      .then(res => res.json())
+    fetchData()
       .then(response => {
         const durations = getDurations(response);
         const nextTours = toursInNextMonths({
