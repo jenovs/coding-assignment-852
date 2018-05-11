@@ -20,9 +20,9 @@ import {
   Wrapper,
 } from './styled';
 
-import starImg from './star.svg';
-import hStarImg from './hStar.png';
-import heartImg from './heart.svg';
+import starImg from './images/star.svg';
+import hStarImg from './images/hStar.png';
+import heartImg from './images/heart.svg';
 
 const durations = {
   d: 'Days',
