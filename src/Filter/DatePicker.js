@@ -17,6 +17,7 @@ class DatePicker extends React.Component {
   handleDatePick = () => {
     const value = this.datePicker.current.value;
     const { handleDatePick } = this.props;
+    const currentDate = new Date().toISOString().split('T')[0];
 
     if (!value) {
       return handleDatePick({
@@ -24,6 +25,11 @@ class DatePicker extends React.Component {
         toDate: new Date(9999, 0),
         activePreset: -1,
       });
+    }
+
+    if (value < currentDate) {
+      this.datePicker.current.value = '';
+      return alert(`You can't travel to the past :(`);
     }
 
     const date = new Date(value);
