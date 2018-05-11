@@ -4,8 +4,8 @@ const getDateStr = d => d.toISOString().split('T')[0];
 
 export default ({
   tours = [],
-  fromDate = new Date(),
-  toDate = new Date(),
+  fromDate = new Date(0),
+  toDate = new Date(9999, 0),
   durations = { min: -Infinity, max: Infinity },
 }) => {
   if (isNotDate(fromDate) || isNotDate(toDate)) return [];
