@@ -39,7 +39,6 @@ class App extends React.Component {
         filterByDate({
           tours: response,
           fromDate: new Date(),
-          toDate: new Date(9999, 0),
         })
       )
       .then(response => {
