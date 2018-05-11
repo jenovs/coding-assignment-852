@@ -35,6 +35,13 @@ class App extends React.Component {
 
   fetchData = () => {
     fetchData()
+      .then(response =>
+        filterByDate({
+          tours: response,
+          fromDate: new Date(),
+          toDate: new Date(9999, 0),
+        })
+      )
       .then(response => {
         const durations = getDurations(response);
         const nextTours = toursInNextMonths({
