@@ -5,8 +5,6 @@ import Filter from '../Filter';
 import NoResults from './NoResults';
 import TourCard from '../TourCard';
 
-// import response from '../response.json';
-
 import fetchData from '../api/fetchData';
 import filterByDate from '../utils/filterByDate';
 import toursInNextMonths from '../utils/toursInNextMonths';
