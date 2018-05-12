@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 import { BREAK_LG } from '../variables/media';
+import { mainColor } from '../variables/colors';
 
 export const Banner = styled.div`
   align-items: center;
-  background-color: #409CD1
+  background-color: ${mainColor};
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -43,7 +44,7 @@ export const Durations = styled.div`
 
 export const Preset = styled.div`
   align-items: center;
-  color: ${p => (p.active ? '#409CD1' : '#333')};
+  color: ${p => (p.active ? mainColor : '#333')};
   font-weight: ${p => (p.active ? 600 : 400)};
   height: 17px;
   display: flex;

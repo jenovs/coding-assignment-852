@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 import { BREAK_LG } from '../../variables/media';
+import { mainColor } from '../../variables/colors';
 
 export const Button = styled.button`
-  background-color: #409cd1;
+  background-color: ${mainColor};
   border: none;
   border-radius: 1px;
   font-weight: bold;

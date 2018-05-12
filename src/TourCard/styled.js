@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 import { BREAK_LG } from '../variables/media';
+import { mainColor } from '../variables/colors';
 
 export const Button = styled.button`
   align-self: center;
-  background-color: #409cd1;
+  background-color: ${mainColor};
   border-radius: 1px;
   border: none;
   color: #fff;
@@ -15,7 +17,7 @@ export const Button = styled.button`
   width: 260px;
 
   &:active {
-    background-color: hsla(202, 61%, 50%, 1);
+    background-color: ${darken(0.1, mainColor)};
   }
 
   @media ${BREAK_LG} {
