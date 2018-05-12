@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { BREAK_LG } from '../variables/media';
+
 export const Button = styled.button`
   align-self: center;
   background-color: #409cd1;
@@ -14,6 +16,10 @@ export const Button = styled.button`
 
   &:active {
     background-color: hsla(202, 61%, 50%, 1);
+  }
+
+  @media ${BREAK_LG} {
+    width: 200px;
   }
 `;
 
@@ -54,10 +60,22 @@ export const Image = styled.div`
   justify-content: flex-end;
   position: relative;
   width: 100%;
+
+  @media ${BREAK_LG} {
+    height: 238px;
+    min-width: 238px;
+    width: 238px;
+  }
 `;
 
 export const InfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 0 22px;
+
+  @media ${BREAK_LG} {
+    border-right: 1px solid #f2f2f2;
+  }
 `;
 
 export const Ratings = styled.div`
@@ -114,4 +132,11 @@ export const Wrapper = styled.div`
   margin: auto;
   margin-bottom: 20px;
   width: 100%;
+
+  @media ${BREAK_LG} {
+    height: 238px;
+    flex-direction: row;
+    margin: 16px;
+    width: auto;
+  }
 `;

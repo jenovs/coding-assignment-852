@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { BREAK_LG } from '../../variables/media';
+
 export const Button = styled.button`
   background-color: #409cd1;
   border: none;
@@ -11,6 +13,11 @@ export const Button = styled.button`
   &:active {
     background-color: hsla(202, 61%, 50%, 1);
   }
+
+  @media ${BREAK_LG} {
+    align-self: center;
+    font-size: 12px;
+  }
 `;
 
 export const Input = styled.input`
@@ -20,6 +27,12 @@ export const Input = styled.input`
   padding: 6px;
   margin-right: 10px;
   min-width: 60px;
+
+  @media ${BREAK_LG} {
+    padding: 3px;
+    min-width: 30px;
+    width: 40px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -27,4 +40,8 @@ export const Wrapper = styled.div`
   display: flex;
   font-size: 14px;
   justify-content: center;
+
+  @media ${BREAK_LG} {
+    font-size: 12px;
+  }
 `;

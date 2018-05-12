@@ -3,31 +3,24 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   align-items: center;
-  color: #999;
+  background-color: #fff;
+  color: #409cd1;
   display: flex;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 12px;
   height: 43px;
   justify-content: center;
-  margin-right: 32px;
-  margin-top: 16px;
-  width: 200px;
+  margin-bottom: 20px;
 `;
 
 const Select = styled.select`
   border: none;
   background-color: #fff;
-  color: #333;
-  font-size: 12px;
-  height: 100%;
-  margin-left: 10px;
-  padding-left: 10px;
-  width: 130px;
+  color: #409cd1;
 `;
 
 const Sort = ({ handleSort, sortIdx }) => (
   <Wrapper>
-    Sort by{' '}
+    Sort by:{' '}
     <Select onChange={handleSort} value={sortIdx}>
       <option value={0}>Default</option>
       <option value={1}>Min. price</option>

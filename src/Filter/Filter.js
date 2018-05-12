@@ -2,7 +2,7 @@ import React from 'react';
 
 import DatePicker from './DatePicker';
 import DurationFilter from './DurationFilter';
-import Sort from './Sort';
+import SortMobile from './SortMobile';
 
 import {
   Banner,
@@ -12,6 +12,7 @@ import {
   Presets,
   Title,
   Title2,
+  Wrapper,
 } from './styled';
 
 const Filter = ({
@@ -20,12 +21,14 @@ const Filter = ({
   activePreset,
   durations,
   inputType,
+  isMobile,
   filterFn,
   handleSort,
   handleDatePick,
+  sortIdx,
 }) => {
   return (
-    <div>
+    <Wrapper>
       <Banner>Filter by:</Banner>
       <DateFilter>
         <Title>Departure date</Title>
@@ -55,8 +58,8 @@ const Filter = ({
           applyDurationFilter={applyDurationFilter}
         />
       </Durations>
-      <Sort handleSort={handleSort} />
-    </div>
+      {isMobile && <SortMobile handleSort={handleSort} sortIdx={sortIdx} />}
+    </Wrapper>
   );
 };
 

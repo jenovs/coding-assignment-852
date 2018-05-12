@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { BREAK_LG } from '../variables/media';
+
 export const Banner = styled.div`
   align-items: center;
   background-color: #409CD1
@@ -21,6 +23,11 @@ export const DateFilter = styled.div`
   padding-left: 40px;
   padding-top: 18px;
   margin-bottom: 10px;
+
+  @media ${BREAK_LG} {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 `;
 
 export const Durations = styled.div`
@@ -68,4 +75,11 @@ export const Title = styled.p`
 export const Title2 = styled(Title)`
   margin-bottom: 13px;
   margin-left: 20px;
+`;
+
+export const Wrapper = styled.div`
+  @media ${BREAK_LG} {
+    margin: 16px;
+    width: 260px;
+  }
 `;

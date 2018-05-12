@@ -1,10 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { BREAK_LG } from '../variables/media';
+
 const Input = styled.input`
   font-size: 14px;
   height: 34px;
+  max-width: 100%;
   width: 261px;
+
+  @media ${BREAK_LG} {
+    width: 212px;
+  }
 `;
 
 class DatePicker extends React.Component {

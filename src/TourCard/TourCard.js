@@ -106,6 +106,8 @@ const TourCard = ({ data }) => {
           />
           <DetailLine title="Operator" details={operator_name} />
         </Details>
+      </InfoWrapper>
+      <InfoWrapper>
         <PriceBox price={getLowestPrice(dates, 'eur')} />
         <SeatsBox>
           <SeatsLeft date={dates[0].start} seats={dates[0].availability} />
@@ -113,8 +115,8 @@ const TourCard = ({ data }) => {
             <SeatsLeft date={dates[1].start} seats={dates[1].availability} />
           )}
         </SeatsBox>
+        <Button>View More</Button>
       </InfoWrapper>
-      <Button>View More</Button>
     </Wrapper>
   );
 };

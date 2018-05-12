@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Filter from '../Filter';
 import NoResults from './NoResults';
+import Sort from '../Filter/Sort';
 import TourCard from '../TourCard';
 
 import fetchData from '../api/fetchData';
@@ -11,9 +12,26 @@ import toursInNextMonths from '../utils/toursInNextMonths';
 import sortByPrice from '../utils/sortByPrice';
 import getDurations from '../utils/getDurations';
 
-const Wrapper = styled.div`
+import { BREAK_LG, BREAK_LG_PX } from '../variables/media';
+
+const Content = styled.div`
   margin: auto;
   max-width: 768px;
+
+  @media ${BREAK_LG} {
+    display: flex;
+    max-width: 100%;
+  }
+`;
+
+const Wrapper = styled.div`
+  @media ${BREAK_LG} {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 1700px;
+  }
 `;
 
 class App extends React.Component {
@@ -31,7 +49,32 @@ class App extends React.Component {
 
   componentDidMount() {
     this.fetchData();
+    this.handleResize();
+
+    window.addEventListener('resize', this.handleResize);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize = () => {
+    const { isMobile } = this.state;
+    const width = window.innerWidth;
+
+    if (isMobile && width >= BREAK_LG_PX) {
+      return this.setState(() => ({
+        isMobile: false,
+      }));
+    }
+    if (!isMobile && width < BREAK_LG_PX) {
+      return this.setState(() => ({
+        isMobile: true,
+      }));
+    }
+
+    return;
+  };
 
   fetchData = () => {
     fetchData()
@@ -116,26 +159,31 @@ class App extends React.Component {
   };
 
   render() {
-    const { filtered, loading } = this.state;
+    const { filtered, isMobile, loading, sortIdx } = this.state;
 
     return (
       <Wrapper>
-        <Filter
-          {...this.state}
-          filterFn={this.handleFilterClick}
-          applyDurationFilter={this.applyDurationFilter}
-          handleSort={this.handleSort}
-          handleDatePick={this.handleDatePick}
-        />
-        <React.Fragment>
-          {loading ? (
-            <div>Loading...</div>
-          ) : filtered.length ? (
-            filtered.map(item => <TourCard key={item.id} data={item} />)
-          ) : (
-            <NoResults />
-          )}
-        </React.Fragment>
+        {!isMobile && <Sort handleSort={this.handleSort} sortIdx={sortIdx} />}
+        <Content>
+          <Filter
+            {...this.state}
+            filterFn={this.handleFilterClick}
+            applyDurationFilter={this.applyDurationFilter}
+            handleSort={this.handleSort}
+            handleDatePick={this.handleDatePick}
+            isMobile={isMobile}
+            sortIdx={sortIdx}
+          />
+          <div>
+            {loading ? (
+              <div>Loading...</div>
+            ) : filtered.length ? (
+              filtered.map(item => <TourCard key={item.id} data={item} />)
+            ) : (
+              <NoResults />
+            )}
+          </div>
+        </Content>
       </Wrapper>
     );
   }
