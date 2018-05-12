@@ -2,7 +2,6 @@
 import response from '../response_mod.json';
 
 // eslint-disable-next-line
-
 const fetchData = () =>
   fetch('https://api.myjson.com/bins/cbyby').then(res => res.json());
 
