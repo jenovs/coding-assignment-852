@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { mainColor } from '../variables/colors';
+
 const Wrapper = styled.div`
   align-items: center;
   color: #999;
@@ -14,6 +16,19 @@ const Wrapper = styled.div`
   width: 200px;
 `;
 
+const WrapperMobile = styled(Wrapper)`
+  background-color: #fff;
+  border-bottom: 1px solid ${mainColor};
+  border-top: 1px solid ${mainColor};
+  color: ${mainColor};
+  display: flex;
+  font-size: 12px;
+  height: 43px;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+`;
+
 const Select = styled.select`
   border: none;
   background-color: #fff;
@@ -25,14 +40,34 @@ const Select = styled.select`
   width: 130px;
 `;
 
-const Sort = ({ handleSort, sortIdx }) => (
-  <Wrapper>
-    Sort by{' '}
-    <Select onChange={handleSort} value={sortIdx}>
-      <option value={0}>Default</option>
-      <option value={1}>Min. price</option>
-    </Select>
-  </Wrapper>
+const SelectMobile = styled(Select)`
+  color: ${mainColor};
+`;
+
+const options = (
+  <React.Fragment>
+    <option value={0}>Default</option>
+    <option value={1}>Min. price</option>
+  </React.Fragment>
 );
+
+const Sort = ({ handleSort, sortIdx, mobile }) => {
+  console.log(mobile);
+  return mobile ? (
+    <WrapperMobile>
+      Sort by:{' '}
+      <SelectMobile onChange={handleSort} value={sortIdx}>
+        {options}
+      </SelectMobile>
+    </WrapperMobile>
+  ) : (
+    <Wrapper>
+      Sort by{' '}
+      <Select onChange={handleSort} value={sortIdx}>
+        {options}
+      </Select>
+    </Wrapper>
+  );
+};
 
 export default Sort;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import DatePicker from './DatePicker';
 import DurationFilter from './DurationFilter';
-import SortMobile from './SortMobile';
+import Sort from './Sort';
 
 import {
   Banner,
@@ -67,7 +67,9 @@ const Filter = ({
           applyDurationFilter={applyDurationFilter}
         />
       </Durations>
-      {isMobile && <SortMobile handleSort={handleSort} sortIdx={sortIdx} />}
+      {isMobile && (
+        <Sort handleSort={handleSort} sortIdx={sortIdx} mobile={true} />
+      )}
     </Wrapper>
   );
 };
