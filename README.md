@@ -27,7 +27,6 @@ Files for deployment will be placed in the `/build` folder.
 ### Notes
 
 The app is not fully finished:
-* only mobile view is implemented,
 * no lazy loading,
 * not quite good UX during initial load
 * regular input fields for duration filter instead of sliders
