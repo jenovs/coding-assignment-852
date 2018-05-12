@@ -19,8 +19,11 @@ const Content = styled.div`
   max-width: 768px;
 
   @media ${BREAK_LG} {
+    align-self: flex-start;
+    justify-content: flex-start;
     display: flex;
     max-width: 100%;
+    width: 100%;
   }
 `;
 
@@ -174,7 +177,7 @@ class App extends React.Component {
             isMobile={isMobile}
             sortIdx={sortIdx}
           />
-          <div>
+          <div style={{ width: '100%' }}>
             {loading ? (
               <div>Loading...</div>
             ) : filtered.length ? (

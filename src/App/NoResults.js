@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { BREAK_LG } from '../variables/media';
+
 const Title = styled.p`
   font-size: 18px;
   font-weight: 700;
@@ -17,6 +19,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media ${BREAK_LG} {
+    margin: auto;
+    margin-top: 32px;
+    width: auto;
+  }
 `;
 
 const NoResults = () => (
