@@ -76,6 +76,19 @@ const TourCard = ({ data }) => {
   };
 
   const handleShowMore = () => {
+    const filtered = dates.map(d => {
+      const date = new Date(d.start);
+      const day = date.getDate();
+      const month = date.toLocaleString('en-us', {
+        month: 'short',
+      });
+
+      return `${day} ${month} \t ${d.availability} seats left`;
+    });
+    console.clear();
+    console.log(filtered.join('\n'));
+
+    alert('Check console');
   };
 
   return (
