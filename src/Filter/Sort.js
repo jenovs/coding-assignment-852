@@ -52,7 +52,6 @@ const options = (
 );
 
 const Sort = ({ handleSort, sortIdx, mobile }) => {
-  console.log(mobile);
   return mobile ? (
     <WrapperMobile>
       Sort by:{' '}
