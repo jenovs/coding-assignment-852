@@ -17,6 +17,7 @@ import {
 
 const Filter = ({
   applyDurationFilter,
+  clearFilters,
   nextTours,
   activePreset,
   durations,
@@ -26,10 +27,16 @@ const Filter = ({
   handleSort,
   handleDatePick,
   sortIdx,
+  toDate,
 }) => {
   return (
     <Wrapper>
-      <Banner>Filter by:</Banner>
+      <Banner>
+        Filter by:{' '}
+        <button onClick={clearFilters} style={{ marginRight: '16px' }}>
+          Clear filters
+        </button>
+      </Banner>
       <DateFilter>
         <Title>Departure date</Title>
         <Presets>
@@ -49,7 +56,7 @@ const Filter = ({
             </Preset>
           ))}
         </Presets>
-        <DatePicker handleDatePick={handleDatePick} />
+        <DatePicker handleDatePick={handleDatePick} toDate={toDate} />
       </DateFilter>
       <Durations>
         <Title2>Duration</Title2>

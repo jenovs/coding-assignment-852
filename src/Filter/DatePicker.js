@@ -20,6 +20,13 @@ class DatePicker extends React.Component {
     value: '',
   };
 
+  static getDerivedStateFromProps(nextProps) {
+    const nextYear = nextProps.toDate.getFullYear();
+    if (nextYear === 9999) {
+      return { value: '' };
+    }
+    return null;
+  }
 
   handleDatePick = e => {
     const pickValue = e.target.value;

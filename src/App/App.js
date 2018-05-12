@@ -61,6 +61,17 @@ class App extends React.Component {
     window.removeEventListener('resize', this.handleResize);
   }
 
+  clearFilters = () => {
+    this.setState(({ durations, response }) => ({
+      filtered: response,
+      activePreset: -1,
+      fromDate: new Date(0),
+      toDate: new Date(9999, 0),
+      filterDurations: { ...durations },
+      sortIdx: 0,
+    }));
+  };
+
   handleResize = () => {
     const { isMobile } = this.state;
     const width = window.innerWidth;
@@ -176,6 +187,7 @@ class App extends React.Component {
             handleDatePick={this.handleDatePick}
             isMobile={isMobile}
             sortIdx={sortIdx}
+            clearFilters={this.clearFilters}
           />
           <div style={{ width: '100%' }}>
             {loading ? (

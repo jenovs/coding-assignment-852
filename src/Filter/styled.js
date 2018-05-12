@@ -7,7 +7,7 @@ export const Banner = styled.div`
   background-color: #409CD1
   color: #fff;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   font-size: 14px;
   font-weight: bold;
   height: 51px;
