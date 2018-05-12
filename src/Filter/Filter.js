@@ -23,6 +23,7 @@ const Filter = ({
   durations,
   inputType,
   isMobile,
+  filterDurations,
   filterFn,
   handleSort,
   handleDatePick,
@@ -62,6 +63,7 @@ const Filter = ({
         <Title2>Duration</Title2>
         <DurationFilter
           durations={durations}
+          filterDurations={filterDurations}
           applyDurationFilter={applyDurationFilter}
         />
       </Durations>
