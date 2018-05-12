@@ -42,8 +42,9 @@ class DurationFilter extends React.Component {
     return (
       <Wrapper>
         <form onSubmit={this.handleSubmit}>
-          <label for="min">min ({durations.min}): </label>
+          <label htmlFor="min">min ({durations.min}): </label>
           <Input
+            id="min"
             type="number"
             value={min || 0}
             name="min"
@@ -51,8 +52,9 @@ class DurationFilter extends React.Component {
             min={durations.min}
             max={durations.max}
           />
-          <label for="max">max ({durations.max}): </label>
+          <label htmlFor="max">max ({durations.max}): </label>
           <Input
+            id="max"
             type="number"
             value={max || 0}
             name="max"

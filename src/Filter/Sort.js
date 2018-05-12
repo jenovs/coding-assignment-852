@@ -54,15 +54,15 @@ const options = (
 const Sort = ({ handleSort, sortIdx, mobile }) => {
   return mobile ? (
     <WrapperMobile>
-      Sort by:{' '}
-      <SelectMobile onChange={handleSort} value={sortIdx}>
+      <label htmlFor="sort">Sort by: </label>
+      <SelectMobile id="sort" onChange={handleSort} value={sortIdx}>
         {options}
       </SelectMobile>
     </WrapperMobile>
   ) : (
     <Wrapper>
-      Sort by{' '}
-      <Select onChange={handleSort} value={sortIdx}>
+      <label htmlFor="sort">Sort by: </label>
+      <Select id="sort" onChange={handleSort} value={sortIdx}>
         {options}
       </Select>
     </Wrapper>
