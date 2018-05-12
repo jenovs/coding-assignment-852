@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { forceCheck } from 'react-lazyload';
 
 import Filter from '../Filter';
 import NoResults from './NoResults';
@@ -59,6 +60,10 @@ class App extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
+  }
+
+  componentDidUpdate() {
+    forceCheck();
   }
 
   clearFilters = () => {

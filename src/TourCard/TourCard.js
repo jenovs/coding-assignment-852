@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 
 import DetailLine from './DetailLine';
 import PriceBox from './PriceBox';
@@ -51,6 +52,12 @@ const renderStarRating = count => {
   return res;
 };
 
+const lazyLoadConfig = {
+  height: 238,
+  once: true,
+  offset: 238 * 2,
+};
+
 const TourCard = ({ data }) => {
   const {
     images,
@@ -94,15 +101,17 @@ const TourCard = ({ data }) => {
 
   return (
     <Wrapper>
-      <Image url={images[0].url} heart={heartImg}>
-        <Heart onClick={handleHeartClick}>
-          <img src={heartImg} alt="heart" />
-        </Heart>
-        <Ratings>
-          <Stars>{renderStarRating(rating)}</Stars>
-          <Reviews>{reviews} reviews</Reviews>
-        </Ratings>
-      </Image>
+      <LazyLoad {...lazyLoadConfig}>
+        <Image url={images[0].url} heart={heartImg}>
+          <Heart onClick={handleHeartClick}>
+            <img src={heartImg} alt="heart" />
+          </Heart>
+          <Ratings>
+            <Stars>{renderStarRating(rating)}</Stars>
+            <Reviews>{reviews} reviews</Reviews>
+          </Ratings>
+        </Image>
+      </LazyLoad>
       <InfoWrapper>
         <H1>
           {name}
