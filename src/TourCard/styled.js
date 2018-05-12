@@ -83,6 +83,15 @@ export const InfoWrapper = styled.div`
 
   @media ${BREAK_LG} {
     border-right: 1px solid #f2f2f2;
+    flex-grow: 1;
+  }
+`;
+
+export const InfoWrapperFixed = styled(InfoWrapper)`
+  @media ${BREAK_LG} {
+    border-right: 1px solid #f2f2f2;
+    max-width: 238px;
+    width: 238px;
   }
 `;
 

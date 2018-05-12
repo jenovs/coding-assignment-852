@@ -13,6 +13,7 @@ import {
   Heart,
   Image,
   InfoWrapper,
+  InfoWrapperFixed,
   Ratings,
   Reviews,
   SeatsBox,
@@ -124,7 +125,7 @@ const TourCard = ({ data }) => {
           <DetailLine title="Operator" details={operator_name} />
         </Details>
       </InfoWrapper>
-      <InfoWrapper>
+      <InfoWrapperFixed>
         <PriceBox price={getLowestPrice(dates, 'eur')} />
         <SeatsBox>
           <SeatsLeft date={dates[0].start} seats={dates[0].availability} />
@@ -137,7 +138,7 @@ const TourCard = ({ data }) => {
         ) : (
           <ButtonInvisible />
         )}
-      </InfoWrapper>
+      </InfoWrapperFixed>
     </Wrapper>
   );
 };
