@@ -23,6 +23,12 @@ export const Button = styled.button`
   }
 `;
 
+export const ButtonInvisible = styled(Button)`
+  background-color: transparent;
+  color: transparent;
+  pointer-events: none;
+`;
+
 export const Descr = styled.div`
   font-size: 12px;
   font-style: italic;

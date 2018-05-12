@@ -6,6 +6,7 @@ import SeatsLeft from './SeatsLeft';
 
 import {
   Button,
+  ButtonInvisible,
   Descr,
   Details,
   H1,
@@ -74,6 +75,9 @@ const TourCard = ({ data }) => {
     }
   };
 
+  const handleShowMore = () => {
+  };
+
   return (
     <Wrapper>
       <Image url={images[0].url} heart={heartImg}>
@@ -115,7 +119,11 @@ const TourCard = ({ data }) => {
             <SeatsLeft date={dates[1].start} seats={dates[1].availability} />
           )}
         </SeatsBox>
-        <Button>View More</Button>
+        {dates.length > 2 ? (
+          <Button onClick={handleShowMore}>View More</Button>
+        ) : (
+          <ButtonInvisible />
+        )}
       </InfoWrapper>
     </Wrapper>
   );
