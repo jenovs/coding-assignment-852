@@ -17,16 +17,20 @@ const Input = styled.input`
 class DatePicker extends React.Component {
   state = {
     inputType: 'text',
+    value: '',
   };
 
-  datePicker = React.createRef();
 
-  handleDatePick = () => {
-    const value = this.datePicker.current.value;
+  handleDatePick = e => {
+    const pickValue = e.target.value;
     const { handleDatePick } = this.props;
     const currentDate = new Date().toISOString().split('T')[0];
 
-    if (!value) {
+    if (!pickValue) {
+      this.setState(() => ({
+        value: '',
+      }));
+
       return handleDatePick({
         fromDate: new Date(0, 0),
         toDate: new Date(9999, 0),
@@ -34,12 +38,16 @@ class DatePicker extends React.Component {
       });
     }
 
-    if (value < currentDate) {
-      this.datePicker.current.value = '';
+    if (pickValue < currentDate) {
+      this.setState(() => ({ value: '' }));
       return alert(`You can't travel to the past :(`);
     }
 
-    const date = new Date(value);
+    const date = new Date(pickValue);
+
+    this.setState(() => ({
+      value: pickValue,
+    }));
 
     handleDatePick({
       fromDate: date,
@@ -49,12 +57,12 @@ class DatePicker extends React.Component {
   };
 
   render() {
-    const { inputType } = this.state;
+    const { inputType, value } = this.state;
 
     return (
       <Input
         type={inputType}
-        innerRef={this.datePicker}
+        value={value}
         onMouseOver={() => this.setState({ inputType: 'date' })}
         onMouseOut={() => this.setState({ inputType: 'text' })}
         onChange={this.handleDatePick}
