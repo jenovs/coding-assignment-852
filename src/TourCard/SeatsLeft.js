@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Datum = styled.div``;
 
 const Seats = styled.div`
-  color: ${p => (p.low ? '#E74C3C' : 'inherit')};
+  color: ${p => (p.danger ? '#E74C3C' : 'inherit')};
 `;
 
 const Wrapper = styled.div`
@@ -28,7 +28,7 @@ const SeatsLeft = ({ date, seats }) => {
       <Datum>
         {day} {month}
       </Datum>
-      <Seats low={seats < 5 ? 'true' : undefined}>
+      <Seats danger={seats < 5}>
         {seats} seat{seats === 1 ? '' : 's'} left
       </Seats>
     </Wrapper>
