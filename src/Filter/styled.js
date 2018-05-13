@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { lighten } from 'polished';
 
 import { BREAK_LG } from '../variables/media';
 import { mainColor } from '../variables/colors';
@@ -14,6 +15,21 @@ export const Banner = styled.div`
   height: 51px;
   margin-bottom: 9px;
   padding-left: 30px;
+`;
+
+export const Button = styled.button`
+  background-color: ${lighten(0.15, mainColor)};
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 16px;
+  padding: 6px;
+
+  &:active {
+    background-color: ${lighten(0.1, mainColor)};
+  }
 `;
 
 export const DateFilter = styled.div`

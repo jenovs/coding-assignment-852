@@ -6,6 +6,7 @@ import Sort from './Sort';
 
 import {
   Banner,
+  Button,
   DateFilter,
   Durations,
   Preset,
@@ -33,10 +34,7 @@ const Filter = ({
   return (
     <Wrapper>
       <Banner>
-        Filter by:{' '}
-        <button onClick={clearFilters} style={{ marginRight: '16px' }}>
-          Clear filters
-        </button>
+        Filter by: <Button onClick={clearFilters}>Clear filters</Button>
       </Banner>
       <DateFilter>
         <Title>Departure date</Title>
