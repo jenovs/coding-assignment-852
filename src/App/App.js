@@ -122,8 +122,19 @@ class App extends React.Component {
       .catch(err => console.log(err));
   };
 
-  handleDatePick = value => {
-    this.setState(() => value, this.applyDateFilter);
+  handleDatePick = date => {
+    const params = {
+      activePreset: -1,
+      fromDate: date,
+      toDate: date,
+    };
+
+    if (!date) {
+      params.fromDate = new Date(0, 0);
+      params.toDate = new Date(9999, 0);
+    }
+
+    this.setState(() => params, this.applyDateFilter);
   };
 
   applyDateFilter = () => {

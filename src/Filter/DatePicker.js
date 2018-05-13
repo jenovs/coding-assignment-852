@@ -38,11 +38,7 @@ class DatePicker extends React.Component {
         value: '',
       }));
 
-      return handleDatePick({
-        fromDate: new Date(0, 0),
-        toDate: new Date(9999, 0),
-        activePreset: -1,
-      });
+      return handleDatePick(null);
     }
 
     if (pickValue < currentDate) {
@@ -56,11 +52,7 @@ class DatePicker extends React.Component {
       value: pickValue,
     }));
 
-    handleDatePick({
-      fromDate: date,
-      toDate: date,
-      activePreset: -1,
-    });
+    handleDatePick(date);
   };
 
   render() {
