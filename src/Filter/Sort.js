@@ -61,7 +61,7 @@ const Sort = ({ handleSort, sortIdx, mobile }) => {
     </WrapperMobile>
   ) : (
     <Wrapper>
-      <label htmlFor="sort">Sort by: </label>
+      <label htmlFor="sort">Sort by </label>
       <Select id="sort" onChange={handleSort} value={sortIdx}>
         {options}
       </Select>
