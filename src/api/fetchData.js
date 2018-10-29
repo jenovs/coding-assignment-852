@@ -3,7 +3,7 @@ import response from '../response_mod.json';
 
 // eslint-disable-next-line
 const fetchData = () =>
-  fetch('https://api.myjson.com/bins/cbyby').then(res => res.json());
+  fetch('https://api.myjson.com/bins/1hgc9m').then(res => res.json());
 
 // eslint-disable-next-line
 const fakeFetch = () => new Promise(resolve => resolve(response));
