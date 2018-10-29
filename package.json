@@ -21,5 +21,11 @@
   "devDependencies": {
     "gh-pages": "^1.2.0"
   },
-  "homepage": "http://jenovs.github.io/coding-assignment-852"
+  "homepage": "http://jenovs.github.io/coding-assignment-852",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
