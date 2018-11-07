@@ -1,5 +1,5 @@
 {
-  "name": "coding-assignment-852",
+  "name": "react-serp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,7 +7,7 @@
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-lazyload": "^2.3.0",
-    "react-scripts": "2.0.5",
+    "react-scripts": "2.1.1",
     "styled-components": "^3.3.2"
   },
   "scripts": {
@@ -21,7 +21,7 @@
   "devDependencies": {
     "gh-pages": "^1.2.0"
   },
-  "homepage": "http://jenovs.github.io/coding-assignment-852",
+  "homepage": "http://jenovs.github.io/react-serp",
   "browserslist": [
     ">0.2%",
     "not dead",
