@@ -1,15 +1,15 @@
 {
-  "main.css": "/coding-assignment-852/static/css/main.4af4acfb.chunk.css",
-  "main.js": "/coding-assignment-852/static/js/main.fede5461.chunk.js",
-  "main.js.map": "/coding-assignment-852/static/js/main.fede5461.chunk.js.map",
-  "static/js/1.2092e90f.chunk.js": "/coding-assignment-852/static/js/1.2092e90f.chunk.js",
-  "static/js/1.2092e90f.chunk.js.map": "/coding-assignment-852/static/js/1.2092e90f.chunk.js.map",
-  "runtime~main.js": "/coding-assignment-852/static/js/runtime~main.e36b0eca.js",
-  "runtime~main.js.map": "/coding-assignment-852/static/js/runtime~main.e36b0eca.js.map",
-  "static/css/main.4af4acfb.chunk.css.map": "/coding-assignment-852/static/css/main.4af4acfb.chunk.css.map",
-  "static/media/heart.svg": "/coding-assignment-852/static/media/heart.b28a80be.svg",
-  "static/media/star.svg": "/coding-assignment-852/static/media/star.418f39c9.svg",
-  "index.html": "/coding-assignment-852/index.html",
-  "precache-manifest.989eb85ff073ba8558ce9e3331d7b7ea.js": "/coding-assignment-852/precache-manifest.989eb85ff073ba8558ce9e3331d7b7ea.js",
-  "service-worker.js": "/coding-assignment-852/service-worker.js"
+  "main.css": "/react-serp/static/css/main.03b356dc.chunk.css",
+  "main.js": "/react-serp/static/js/main.bff76cea.chunk.js",
+  "main.js.map": "/react-serp/static/js/main.bff76cea.chunk.js.map",
+  "static/js/1.8a5f9909.chunk.js": "/react-serp/static/js/1.8a5f9909.chunk.js",
+  "static/js/1.8a5f9909.chunk.js.map": "/react-serp/static/js/1.8a5f9909.chunk.js.map",
+  "runtime~main.js": "/react-serp/static/js/runtime~main.bc9b5f25.js",
+  "runtime~main.js.map": "/react-serp/static/js/runtime~main.bc9b5f25.js.map",
+  "static/css/main.03b356dc.chunk.css.map": "/react-serp/static/css/main.03b356dc.chunk.css.map",
+  "static/media/heart.svg": "/react-serp/static/media/heart.b28a80be.svg",
+  "static/media/star.svg": "/react-serp/static/media/star.418f39c9.svg",
+  "index.html": "/react-serp/index.html",
+  "precache-manifest.bbaff84f55dc59094b235aeb07208d17.js": "/react-serp/precache-manifest.bbaff84f55dc59094b235aeb07208d17.js",
+  "service-worker.js": "/react-serp/service-worker.js"
 }
